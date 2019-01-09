@@ -1,0 +1,27 @@
+{
+  "name": "webpack_comps_test",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "main": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production npx webpack --display-modules",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "dependencies": {
+    "comps_test": "https://github.com/ajrothwell/comps_test#f806417e5bd1bac87c046623a230a46ef4c1ca4d",
+    "vue": "^2.5.17",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
