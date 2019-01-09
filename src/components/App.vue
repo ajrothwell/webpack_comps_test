@@ -17,11 +17,11 @@
       }"
     />
 
-    <!-- <callout
+    <callout
       :slots="{
         text: 'Address or Intersection Found',
       }"
-    /> -->
+    />
 
   </div>
 </template>
@@ -30,6 +30,7 @@
 
   import { ExternalLink } from 'comps_test';
   import { Badge } from 'comps_test';
+  import { Callout } from 'comps_test';
 
   export default {
 
@@ -37,7 +38,7 @@
       // ExternalLink: () => import('../../node_modules/rollup_test/src/components/ExternalLink.vue'),
       ExternalLink,
       Badge,
-      // Callout
+      Callout
     },
     data() {
       const test = {

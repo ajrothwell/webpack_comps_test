@@ -35,23 +35,23 @@ module.exports = {
     new Visualizer({ filename: './statistics.html' })
   ],
   optimization: {
-    splitChunks: {
-      chunks: 'all'
-      // cacheGroups: {
-      //   vendor: {
-      //     test: /node_modules/,
-      //     chunks: 'initial',
-      //     name: 'vendor',
-      //     enforce: true,
-      //     priority: 5,
-      //   },
-      //   rollup_vue: {
-      //     test: /rollup_vue/,
-      //     chunks: 'initial',
-      //     name: 'rollup_vue',
-      //     priority: 10,
-      //   },
-      // }
-    }
+    // splitChunks: {
+    //   chunks: 'all'
+    //   // cacheGroups: {
+    //   //   vendor: {
+    //   //     test: /node_modules/,
+    //   //     chunks: 'initial',
+    //   //     name: 'vendor',
+    //   //     enforce: true,
+    //   //     priority: 5,
+    //   //   },
+    //   //   rollup_vue: {
+    //   //     test: /rollup_vue/,
+    //   //     chunks: 'initial',
+    //   //     name: 'rollup_vue',
+    //   //     priority: 10,
+    //   //   },
+    //   // }
+    // }
   }
 };
