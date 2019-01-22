@@ -24,6 +24,10 @@
       }"
     />
 
+    <address-input :widthFromConfig="415"
+                   :placeholder="null"
+    >
+
     <!-- <callout
       :slots="{
         text: 'Address or Intersection Found',
@@ -37,6 +41,7 @@
 
   import ExternalLink from 'rollup_vue_6/src/components/ExternalLink/ExternalLink.vue';
   import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
+  import AddressInput from 'rollup_vue_6/src/components/AddressInput/AddressInput.vue';
   import Badge_new from './Badge_new.vue';
   // import { Callout } from 'comps_test';
 

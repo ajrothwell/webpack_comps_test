@@ -1,5 +1,5 @@
 {
-  "name": "webpack_comps_test",
+  "name": "webpack_vue_6",
   "sideEffects": false,
   "version": "1.0.0",
   "main": "",
@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
-    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#ec7f2841d264b3fa713903d31f3120fa07fb0d42",
+    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#d74ebe9c81e3abc76a429a44e2c96a51bfa90c10",
     "vue": "^2.5.22",
     "webpack-visualizer-plugin": "^0.1.11"
   },
