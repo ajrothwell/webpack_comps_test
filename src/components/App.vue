@@ -2,6 +2,17 @@
   <div>
     <button @click="test()">Button</button>
     <!-- <component :is="componentLoader" -->
+
+    <div>Badge from local .vue file:</div>
+    <badge_new
+    :slots="{
+      title: 'Address or Intersection Found',
+      value: 'test'
+      }"
+    />
+    <br><br>
+
+    <div>Components from rollup_vue_6:</div>
     <external-link class="ib"
                :options="{
                   data: 'openmaps.phila.gov',
@@ -17,12 +28,6 @@
       }"
     />
 
-    <badge_new
-      :slots="{
-        title: 'Address or Intersection Found',
-        value: 'test'
-      }"
-    />
 
     <address-input :widthFromConfig="415"
                    :placeholder="null"
@@ -41,8 +46,8 @@
 
   import ExternalLink from 'rollup_vue_6/src/components/ExternalLink/ExternalLink.vue';
   import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
-  import AddressInput from 'rollup_vue_6/src/components/AddressInput/AddressInput.vue';
   import Badge_new from './Badge_new.vue';
+  import AddressInput from 'rollup_vue_6/src/components/AddressInput/AddressInput.vue';
   // import { Callout } from 'comps_test';
 
   export default {
@@ -52,6 +57,7 @@
       ExternalLink,
       Badge,
       Badge_new,
+      AddressInput,
       // Callout
     },
     data() {
