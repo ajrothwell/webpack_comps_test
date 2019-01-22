@@ -7,7 +7,7 @@ console.log('square:', square);
 
 document.getElementById('test').innerHTML = square(10);
 
-import '../node_modules/phila-standards/dist/css/phila-standards.min.css';
+// import '../node_modules/phila-standards/dist/css/phila-standards.min.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faExternalLink } from '@fortawesome/pro-solid-svg-icons/faExternalLink';
