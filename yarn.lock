@@ -2904,9 +2904,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-"rollup_vue_6@https://github.com/ajrothwell/rollup_vue_6#e2eac7aa1f9a47e880a258ccd04b15fd7b9a8a8a":
+"rollup_vue_6@https://github.com/ajrothwell/rollup_vue_6#5fc0e73fab456a07e663f17964193d6c48831870":
   version "1.0.0"
-  resolved "https://github.com/ajrothwell/rollup_vue_6#e2eac7aa1f9a47e880a258ccd04b15fd7b9a8a8a"
+  resolved "https://github.com/ajrothwell/rollup_vue_6#5fc0e73fab456a07e663f17964193d6c48831870"
   dependencies:
     axios "^0.18.0"
     vue "^2.5.17"
