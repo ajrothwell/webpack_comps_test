@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import createStore from './store';
 import App from './components/App.vue';
 import { square } from './localFunctions';
 
@@ -8,8 +9,10 @@ document.getElementById('test').innerHTML = square(10);
 
 // import '../node_modules/phila-standards/dist/css/phila-standards.min.css';
 
+const store = createStore();
+
 const vm = new Vue({
   el: '#vue-app',
-  render: h => h(App)
-  // store
+  render: h => h(App),
+  store
 });

@@ -11,6 +11,7 @@
   "dependencies": {
     "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#d74ebe9c81e3abc76a429a44e2c96a51bfa90c10",
     "vue": "^2.5.22",
+    "vuex": "^3.1.0",
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "devDependencies": {
