@@ -9,7 +9,13 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
-    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#af0d396fa371637ad764df9f9e56d1a7c7a9a5e5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/pro-light-svg-icons": "^5.6.3",
+    "@fortawesome/pro-regular-svg-icons": "^5.6.3",
+    "@fortawesome/pro-solid-svg-icons": "^5.6.3",
+    "@fortawesome/vue-fontawesome": "^0.1.5",
+    "phila-standards": "^1.0.2",
+    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#d2f6f2dc1fdcb8eb6baecc12f1dc141eecdc1ea3",
     "vue": "^2.5.22",
     "vuex": "^3.1.0",
     "webpack-visualizer-plugin": "^0.1.11"
