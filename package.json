@@ -15,7 +15,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.6.3",
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "phila-standards": "^1.0.2",
-    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#d2f6f2dc1fdcb8eb6baecc12f1dc141eecdc1ea3",
+    "rollup_vue_6": "https://github.com/ajrothwell/rollup_vue_6#e2eac7aa1f9a47e880a258ccd04b15fd7b9a8a8a",
     "vue": "^2.5.22",
     "vuex": "^3.1.0",
     "webpack-visualizer-plugin": "^0.1.11"

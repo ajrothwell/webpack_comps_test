@@ -33,11 +33,11 @@
                    :placeholder="null"
     >
 
-    <!-- <callout
+    <callout
       :slots="{
         text: 'Address or Intersection Found',
       }"
-    /> -->
+    />
 
   </div>
 </template>
@@ -48,6 +48,7 @@
   import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
   import Badge_new from './Badge_new.vue';
   import AddressInput from 'rollup_vue_6/src/components/AddressInput/AddressInput.vue';
+  import Callout from 'rollup_vue_6/src/components/Callout/Callout.vue';
   // import { Callout } from 'comps_test';
 
   export default {
