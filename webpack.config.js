@@ -9,6 +9,12 @@ module.exports = {
   entry: {
     app: ['./public/index.html', './src/index.js'],
   },
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.js",
+      vuex$: "vuex/dist/vuex.esm.js"
+    }
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
@@ -35,6 +41,8 @@ module.exports = {
     new Visualizer({ filename: './statistics.html' })
   ],
   optimization: {
+    usedExports: true,
+    sideEffects: false,
     // splitChunks: {
     //   chunks: 'all'
     //   // cacheGroups: {
