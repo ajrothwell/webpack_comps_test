@@ -59,7 +59,7 @@
       Badge,
       Badge_new,
       AddressInput,
-      // Callout
+      Callout
     },
     data() {
       const test = {
