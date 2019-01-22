@@ -18,7 +18,7 @@
         text: 'Address or Intersection Found',
       }"
     />
-    
+
     <external-link class="ib"
                :options="{
                   data: 'openmaps.phila.gov',
@@ -38,6 +38,7 @@
     <address-input :widthFromConfig="415"
                    :placeholder="null"
     >
+    </address-input>
 
     <callout
       :slots="{
