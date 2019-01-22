@@ -35,8 +35,8 @@
 
 <script>
 
-  import ExternalLink from 'rollup_vue_3_3/src/components/ExternalLink/ExternalLink.vue';
-  import Badge from 'rollup_vue_3_3/src/components/Badge/Badge.vue';
+  import ExternalLink from 'rollup_vue_6/src/components/ExternalLink/ExternalLink.vue';
+  import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
   import Badge_new from './Badge_new.vue';
   // import { Callout } from 'comps_test';
 
