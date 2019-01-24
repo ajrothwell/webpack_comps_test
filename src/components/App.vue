@@ -1,78 +1,242 @@
 <template>
   <div>
-    <button @click="test()">Button</button>
+    <!-- <button @click="test()">Button</button> -->
+    <!-- <br><br> -->
     <!-- <component :is="componentLoader" -->
 
-    <div>Badge from local .vue file:</div>
-    <badge_new
-    :slots="{
-      title: 'Address or Intersection Found',
-      value: 'test'
-      }"
+    <h4 class="margin-sides-20">Badge from local .vue file:</h4>
+    <badge_new class="margin-sides-20"
+              :slots="{
+                title: 'Badge from local .vue file',
+                value: 'test local badge'
+                }"
     />
     <br><br>
 
-    <div>Components from rollup_vue_6:</div>
-    <callout
-      :slots="{
-        text: 'Address or Intersection Found',
-      }"
+    <h4 class="margin-sides-20">Components from rollup_vue_6:</h4>
+
+
+    <badge class="margin-sides-20"
+          :slots="{
+            title: 'Address or Intersection Found',
+            value: 'test'
+          }"
     />
 
-    <external-link class="ib"
-               :options="{
-                  data: 'openmaps.phila.gov',
-                  href: 'https://openmaps.phila.gov'
-               }"
-    />
-    <!-- v-if="false" -->
-
-    <badge
-      :slots="{
-        title: 'Address or Intersection Found',
-        value: 'test'
-      }"
+    <external-link class="ib margin-sides-20"
+                  :options="{
+                    data: 'openmaps.phila.gov',
+                    href: 'https://openmaps.phila.gov'
+                    }"
     />
 
+    <callout class="margin-sides-20"
+            :slots="{
+              text: 'Test Callout from rollup_vue_6',
+            }"
+    />
 
-    <address-input :widthFromConfig="415"
-                   :placeholder="null"
+    <any-header class="margin-sides-20"
+                  :options="{
+                      headerType: 'h1'
+                  }"
+                  :slots="{
+                      text: 'test h1 text'
+                  }"
+    />
+
+    <address-input class="margin-sides-20"
+                  :widthFromConfig="415"
+                  :placeholder="null"
     >
     </address-input>
 
-    <callout
-      :slots="{
-        text: 'Address or Intersection Found',
-      }"
+    <horizontal-table class="margin-20 medium-10"
+                      :slots="horizontalTable_01_Slots"
+                      :options="horizontalTable_01_Options"
     />
+
+    <div class="margin-sides-20 component-label">vertical-table:</div>
+      <vertical-table
+        class="margin-20 margin-bottom-60 medium-8"
+        :slots="{
+          fields: [
+            {
+              label: 'address',
+              value: function(state) {
+                return state.geocode.data.properties.street_address || '';
+              },
+            },
+            {
+              label: 'opa #',
+              value: function(state) {
+                return state.geocode.data.properties.opa_account_num;
+              },
+            },
+            {
+              label: 'owner',
+              value: function(state) {
+                return state.sources.opa.data.owner_1;
+              },
+            },
+          ]
+        }"
+        :options="{
+          id: 'verticalTableId',
+          dataSources: ['opa'],
+          export: {
+            formatButtons: {
+              'csv': 'CSV',
+              'pdf': 'PDF'
+            },
+            file: function(state) { return state.geocode.data.properties.opa_account_num + '_opaData'; },
+            introLines: [
+              function(state) { return state.geocode.data.properties.opa_account_num; },
+            ],
+          },
+          externalLink: {
+            action: function() {
+              return 'See more';
+            },
+            name: 'Atlas',
+            href: 'https://atlas.phila.gov'
+          }
+        }"
+      />
 
   </div>
 </template>
 
 <script>
 
+  import Badge_new from './Badge_new.vue';
+  import AnyHeader from 'rollup_vue_6/src/components/AnyHeader/AnyHeader.vue';
   import ExternalLink from 'rollup_vue_6/src/components/ExternalLink/ExternalLink.vue';
   import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
-  import Badge_new from './Badge_new.vue';
   import AddressInput from 'rollup_vue_6/src/components/AddressInput/AddressInput.vue';
   import Callout from 'rollup_vue_6/src/components/Callout/Callout.vue';
-  // import { Callout } from 'comps_test';
+  import HorizontalTable from 'rollup_vue_6/src/components/HorizontalTable/HorizontalTable.vue';
+  import HorizontalTableRow from 'rollup_vue_6/src/components/HorizontalTableRow/HorizontalTableRow.vue';
+  import PopoverLink from 'rollup_vue_6/src/components/PopoverLink/PopoverLink.vue';
+  import VerticalTable from 'rollup_vue_6/src/components/VerticalTable/VerticalTable.vue';
+
 
   export default {
 
     components: {
       // ExternalLink: () => import('../../node_modules/rollup_test/src/components/ExternalLink.vue'),
+      AnyHeader,
       ExternalLink,
       Badge,
       Badge_new,
       AddressInput,
-      Callout
+      Callout,
+      HorizontalTable,
+      HorizontalTableRow,
+      PopoverLink,
+      VerticalTable
     },
     data() {
-      const test = {
-        useLink: false
+      const data = {
+        // useLink: false
+        horizontalTable_01_Options: {
+          id: 'testHorizTable_01',
+          export: {
+            formatButtons: {
+              'csv': 'CSV',
+              'pdf': 'PDF'
+            },
+            file: function(state) { return state.geocode.data.properties.li_address_key + '_BusinessLicenses'; },
+            introLines: [
+              function(state) { return state.geocode.data.properties.li_address_key; },
+            ],
+          },
+          totalRow: {
+            enabled: false,
+          },
+          limit: 5,
+          filters: [
+            {
+              type: 'time',
+              getValue: function(item) {
+                return item['mostrecentissuedate'];
+              },
+              label: 'From the last',
+              values: [
+                {
+                  label: '30 days',
+                  value: '30',
+                  unit: 'days',
+                  direction: 'subtract',
+                },
+                {
+                  label: '90 days',
+                  value: '90',
+                  unit: 'days',
+                  direction: 'subtract',
+                },
+                {
+                  label: 'year',
+                  value: '1',
+                  unit: 'years',
+                  direction: 'subtract',
+                }
+              ]
+            }
+          ],
+          fields: [
+            {
+              label: 'MostRecentIssueDate',
+              value: function(state, item){
+                return item.mostrecentissuedate;
+                // return item['mostrecentissuedate'];
+              },
+              transforms: [
+                'date'
+              ]
+            },
+            {
+              label: 'LicenseNumber',
+              value: function(state, item){
+                return item.licensenum;
+              }
+            },
+            {
+              label: 'LicenseType',
+              value: function(state, item){
+                return item['licensetype'];
+              }
+            },
+            {
+              label: 'BusinessName',
+              value: function(state, item){
+                return item['business_name'];
+              }
+            },
+          ],
+          externalLink: {
+            action: function(count) {
+              return 'See ' + count + ' older permits at L&I Property History';
+            },
+            name: 'L&I Property History',
+            href: function(state) {
+              return 'http://li.phila.gov/';
+            }
+          }
+        },
+        horizontalTable_01_Slots: {
+          title: 'Business Licenses',
+          // items: []
+          items: function(state) {
+            var data;
+            if (state.sources.liBusinessLicenses.data) {
+              data = state.sources.liBusinessLicenses.data.rows
+            }
+            return data;
+          },
+        },
       }
-      return test;
+      return data;
     },
     // props: {
     //   componentType: {
@@ -99,3 +263,33 @@
   }
 
 </script>
+
+<style scoped>
+#app-root {
+  height: 100%
+}
+#components-root {
+  padding: 20px;
+  height: 90%;
+  overflow-y: auto;
+}
+.component-label {
+  font-size: 20px;
+}
+.margin-sides-20 {
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.margin-20 {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.margin-bottom-60 {
+  margin-bottom: 60px !important;
+}
+.ib {
+  display: inline-block;
+}
+</style>
