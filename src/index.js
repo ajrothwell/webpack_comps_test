@@ -14,7 +14,7 @@ document.getElementById('test').innerHTML = square(10);
 
 import '../node_modules/phila-standards/dist/css/phila-standards.min.css';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faExternalLink } from '@fortawesome/pro-solid-svg-icons/faExternalLink';
 import { faSearch } from '@fortawesome/pro-solid-svg-icons/faSearch';
 import { faTimes } from '@fortawesome/pro-solid-svg-icons/faTimes';

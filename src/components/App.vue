@@ -34,6 +34,9 @@
             :slots="{
               text: 'Test Callout from rollup_vue_6',
             }"
+            :options="{
+              components: calloutComponents_01
+            }"
     />
 
     <any-header class="margin-sides-20"
@@ -110,6 +113,7 @@
 <script>
 
   import Badge_new from './Badge_new.vue';
+
   import AnyHeader from 'rollup_vue_6/src/components/AnyHeader/AnyHeader.vue';
   import ExternalLink from 'rollup_vue_6/src/components/ExternalLink/ExternalLink.vue';
   import Badge from 'rollup_vue_6/src/components/Badge/Badge.vue';
@@ -119,6 +123,16 @@
   import HorizontalTableRow from 'rollup_vue_6/src/components/HorizontalTableRow/HorizontalTableRow.vue';
   import PopoverLink from 'rollup_vue_6/src/components/PopoverLink/PopoverLink.vue';
   import VerticalTable from 'rollup_vue_6/src/components/VerticalTable/VerticalTable.vue';
+
+  // import AnyHeader from '@cityofphiladelphia/phila-vue-comps/src/components/AnyHeader.vue';
+  // import ExternalLink from '@cityofphiladelphia/phila-vue-comps/src/components/ExternalLink.vue';
+  // import Badge from '@cityofphiladelphia/phila-vue-comps/src/components/Badge.vue';
+  // import AddressInput from '@cityofphiladelphia/phila-vue-comps/src/components/AddressInput.vue';
+  // import Callout from '@cityofphiladelphia/phila-vue-comps/src/components/Callout.vue';
+  // import HorizontalTable from '@cityofphiladelphia/phila-vue-comps/src/components/HorizontalTable.vue';
+  // import HorizontalTableRow from '@cityofphiladelphia/phila-vue-comps/src/components/HorizontalTableRow.vue';
+  // import PopoverLink from '@cityofphiladelphia/phila-vue-comps/src/components/PopoverLink.vue';
+  // import VerticalTable from '@cityofphiladelphia/phila-vue-comps/src/components/VerticalTable.vue';
 
 
   export default {
@@ -139,6 +153,15 @@
     data() {
       const data = {
         // useLink: false
+        calloutComponents_01: [
+          {
+            type: 'badge',
+            slots: {
+              title: 'badge inside callout',
+              value: 'badge in callout value'
+            }
+          }
+        ],
         horizontalTable_01_Options: {
           id: 'testHorizTable_01',
           export: {
